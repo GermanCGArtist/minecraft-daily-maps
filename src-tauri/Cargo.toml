@@ -1,0 +1,18 @@
+[package]
+name = "minecraft-daily-maps"
+version.workspace = true
+edition.workspace = true
+description = "Desktop app that turns daily Minecraft world zips into browsable, diffable tiled maps"
+default-run = "minecraft-daily-maps"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+mapcore = { path = "../crates/mapcore" }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

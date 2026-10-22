@@ -1,0 +1,15 @@
+{
+  "name": "minecraft-daily-maps",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Desktop app that turns daily Minecraft world zips into browsable, diffable tiled maps",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "test:viewer": "node --test tests/viewer"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}
