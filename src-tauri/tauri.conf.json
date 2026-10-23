@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Minecraft Daily Maps",
-  "version": "0.1.0",
-  "identifier": "dev.minecraftdailymaps.desktop",
+  "version": "0.4.0",
+  "identifier": "dev.mcdailymaps.desktop",
   "build": {
     "frontendDist": "../ui"
   },
@@ -10,11 +10,12 @@
     "withGlobalTauri": true,
     "windows": [
       {
+        "label": "main",
         "title": "Minecraft Daily Maps",
-        "width": 1180,
+        "width": 1080,
         "height": 780,
-        "minWidth": 920,
-        "minHeight": 600
+        "minWidth": 760,
+        "minHeight": 520
       }
     ],
     "security": {
@@ -24,13 +25,10 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "category": "Utility",
-    "shortDescription": "Daily Minecraft world maps",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
-      "icons/icon.icns",
       "icons/icon.ico"
     ]
   }

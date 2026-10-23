@@ -1,18 +1,25 @@
 [package]
-name = "minecraft-daily-maps"
-version.workspace = true
-edition.workspace = true
-description = "Desktop app that turns daily Minecraft world zips into browsable, diffable tiled maps"
-default-run = "minecraft-daily-maps"
+name = "mc-daily-maps"
+version = "0.4.0"
+edition = "2021"
+description = "Minecraft Daily Mapping Tool: desktop control panel"
+
+[features]
+# Embed ../ui into the binary and serve it from the app itself. The Tauri CLI turns this on
+# for `cargo tauri dev/build`; enabling it by default makes a plain `cargo run` work too
+# (without it the window tries to load a dev server URL and stays blank).
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-mapcore = { path = "../crates/mapcore" }
 tauri = { version = "2", features = [] }
 tauri-plugin-dialog = "2"
 tauri-plugin-notification = "2"
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+mcmap-core = { path = "../crates/core" }

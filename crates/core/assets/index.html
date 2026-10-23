@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<div id="app">
+  <header id="bar">
+    <div id="dimTabs" role="tablist"></div>
+    <div id="siteControls" hidden>
+      <button id="prevDay" title="Previous day">&#9664;</button>
+      <input id="slider" type="range" min="0" max="0" value="0">
+      <button id="nextDay" title="Next day">&#9654;</button>
+      <span id="dayLabel"></span>
+      <select id="siteSnap" title="Snapshot of this day"></select>
+    </div>
+    <div id="snapControls" hidden>
+      <span id="snapLabel"></span>
+      <select id="snapSel" title="Other snapshots of this day"></select>
+    </div>
+    <label id="chgLabel"><input id="chgToggle" type="checkbox"> Show changes</label>
+    <div id="zoomBtns"><button id="zoomOut" title="Zoom out">&minus;</button><button id="zoomIn" title="Zoom in">+</button><button id="fit" title="Fit map">Fit</button></div>
+  </header>
+  <main id="map">
+    <div id="tiles"></div>
+    <div id="overlay"></div>
+    <div id="empty" hidden></div>
+  </main>
+  <footer id="status"><span id="coords">X: –  Z: –</span><span id="legend" hidden><i class="a"></i>new <i class="c"></i>changed <i class="r"></i>removed</span></footer>
+</div>
+<script src="{{DATA}}"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
